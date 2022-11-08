@@ -178,7 +178,7 @@ $biru_card : #ECF3FF;
 
         h1 {
             font-weight: 500;
-            font-size: 5vh;
+            font-size: 4vh;
         }
 
     }
@@ -195,8 +195,11 @@ $biru_card : #ECF3FF;
             border: none;
             border-radius: 20px;
             padding: 10px;
+            letter-spacing: none;
 
-
+            h3 {
+                margin: 0;
+            }
 
             .clock {
                 font-size: 15px;
@@ -210,6 +213,7 @@ $biru_card : #ECF3FF;
 }
 
 .features {
+
     a {
         text-decoration: none;
     }
@@ -235,8 +239,18 @@ $biru_card : #ECF3FF;
         }
     }
 
-    h4 {
-        font-weight: 900;
+    h1 {
+        font-weight: 200;
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-weight: 200;
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
     }
 
     @media (min-width: 576px) {
@@ -324,11 +338,12 @@ $biru_card : #ECF3FF;
 
         }
 
-        h2 {
+        h1 {
             font-weight: 900;
+            font-size: 2rem;
         }
 
-        h4 {
+        h3 {
             font-weight: 500;
         }
 

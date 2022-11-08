@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('../app/module/login/login.module').then((x) => x.LoginModule)
   },
+  {
+    path: 'job-find',
+    loadChildren: () => import('../app/module/job-find/job-find.module').then((x) => x.JobFindModule)
+  },
 ];
 
 @NgModule({
