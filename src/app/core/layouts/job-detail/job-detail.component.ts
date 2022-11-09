@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
-  selector: 'app-job-find',
-  templateUrl: './job-find.component.html',
-  styleUrls: ['./job-find.component.scss']
+  selector: 'app-job-detail',
+  templateUrl: './job-detail.component.html',
+  styleUrls: ['./job-detail.component.scss']
 })
-export class JobFindComponent implements OnInit {
+export class JobDetailComponent implements OnInit {
 
   jobs = new Array<any>();
 
@@ -31,7 +31,5 @@ export class JobFindComponent implements OnInit {
       }
     );
   }
-
-  opened = false;
 
 }
