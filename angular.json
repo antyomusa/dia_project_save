@@ -28,13 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "../dia-project/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "../dia-project/node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "../dia-project/src/assets/js/script.js"
+              "../dia-project/node_modules/jquery/dist/jquery.min.js",
+              "../dia-project/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "../dia-project/node_modules/popper.js/dist/umd/popper.min.js"
             ]
           },
           "configurations": {
