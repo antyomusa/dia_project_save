@@ -31,7 +31,7 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown username">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" class="d-flex">
                             <span>Anggi Anindita</span>
@@ -152,7 +152,10 @@
                                             <img src="/assets/ideaco.png" alt="">
                                         </div>
                                         <div class="col-md-7">
-                                            <h5 class="mb-2"><a routerLink="detail/{{job.jobId}}"> {{ job.jobName }}</a>
+                                            <h5 class="mb-2"><a routerLink="detail/{{job.jobId}}" class="text-dark"> {{
+                                                    job.jobName
+                                                    }}<span
+                                                        class="badge bg-secondary ms-1">{{job.jobPosition}}</span></a>
                                             </h5>
                                             <a href="">
                                                 <p>{{ job.recruiterCompany }}</p>
