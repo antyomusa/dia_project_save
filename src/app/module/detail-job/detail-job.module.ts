@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { JobFindRoutingModule } from './job-find-routing.module';
-import { JobFindComponent } from './job-find.component';
+import { DetailJobRoutingModule } from './detail-job-routing.module';
+import { DetailJobComponent } from './detail-job.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -10,13 +10,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
+
 @NgModule({
   declarations: [
-    JobFindComponent
+    DetailJobComponent
   ],
   imports: [
     CommonModule,
-    JobFindRoutingModule,
+    DetailJobRoutingModule,
     MatSidenavModule,
     FormsModule,
     SharedModule,
@@ -25,12 +26,7 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule
   ],
   exports: [
-    MatSidenavModule,
-    FormsModule,
-    SharedModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule
+    MatSidenavModule
   ]
 })
-export class JobFindModule { }
+export class DetailJobModule { }

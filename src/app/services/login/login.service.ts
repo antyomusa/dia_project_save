@@ -16,8 +16,6 @@ export class LoginService {
   }
 
   public postLogin(body: any): Observable<any> {
-    // return this.http.post("https://zoo-animal-api.herokuapp.com/animals/rand", body);
-    alert(body.value);
     const params = new HttpParams()
       .set('jobseekerEmail', body.jobseekerEmail)
       .set('jobseekerPassword', body.jobseekerPassword);

@@ -1,115 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada:regular,700" rel="stylesheet" />
-
-
-</head>
-
-<body>
-    <header id="header">
-        <nav class="navbar navbar-custom navbar-expand-lg py-3">
-            <div class="container-fluid mx-5">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/logo.jpg" alt="" width="108" height="20">
-                </a>
-                <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Jobseeker</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Employer</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-5">
-                        <li class="nav-item mx-2">
-                            <button type="button" class="btn btn-outline-primary rounded-pill px-4">Sign Up</button>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <button type="button" class="btn btn-primary rounded-pill px-4">Login</button>
-                        </li>
-                    </ul>
-                </div>
+<header id="header">
+    <nav class="navbar navbar-custom navbar-expand-lg py-3">
+        <div class="container-fluid mx-5">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.jpg" alt="" width="108" height="20">
+            </a>
+            <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Jobseeker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Employer</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-5">
+                    <li class="nav-item mx-2">
+                        <button type="button" class="btn btn-outline-primary rounded-pill px-4">Sign Up</button>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <button type="button" class="btn btn-primary rounded-pill px-4">Login</button>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
-    <section id="jumbotron">
-        <div class="jumbotron jumbotron-fluid" id="Login">
-            <div class="container">
-                <div class="row">
-                    <div class="contentBox col-md-6">
-                        <div class="text-center">
-                            <div class="text-white text1">
-                                <h5 class="text2 text-weight">Browse.Apply.Get Hired</h5>
-                                <p class="text-white text-secondary">Toptalent will help you find a job that suits to
-                                    your skill.
-                                    Our top company is waiting to collaborate with you!</p>
-                            </div>
+<section id="jumbotron">
+    <div class="jumbotron jumbotron-fluid" id="Login">
+        <div class="container">
+            <div class="row">
+                <div class="contentBox col-md-6">
+                    <div class="text-center">
+                        <div class="text-white text1">
+                            <h5 class="text2 text-weight">Browse.Apply.Get Hired</h5>
+                            <p class="text-white text-secondary">Toptalent will help you find a job that suits to
+                                your skill.
+                                Our top company is waiting to collaborate with you!</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div>
-                            <h4 class="h4 text-gray-900 mb-4 text-weight">Login</h4>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <h4 class="h4 text-gray-900 mb-4 text-weight">Login</h4>
+                    </div>
+                    <p class="text-secondary text-gray-900 mb-4">Email</p>
+                    <form class="form-group" [formGroup]="formGroupLogin" (ngSubmit)="onLogin()">
+                        <div class="form-group">
+                            <input formControlName="jobseekerEmail" type="email" class="form-control form-control-user"
+                                id="exampleInputEmail" aria-describedby="emailHelp" placeholder="youremail@mail.com"
+                                required>
+                            <div *ngIf="!formGroupLogin.controls['jobseekerEmail'].valid">
+                                <span style="color: red;">A valid email is required</span>
+                            </div>
                         </div>
-                        <p class="text-secondary text-gray-900 mb-4">Email</p>
-                        <form class="user" [formGroup]="formGroupLogin">
-                            <div class="form-group">
-                                <input type="email" formControlName="jobseekerEmail" class="input" type="text"
-                                    placeholder="username">
+                        <p class="text-secondary text-gray-900 mb-4">Password</p>
+                        <div class="form-group">
+                            <input formControlName="jobseekerPassword" type="password"
+                                class="form-control form-control-user" id="exampleInputPassword"
+                                placeholder="Enter your password" minlength="8">
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox small">
+                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                <label class="custom-control-label" for="customCheck">
+                                    Remember Me</label>
+                                <a class="text-right" href="">Forgot Password?</a>
                             </div>
-                            <p class="text-secondary text-gray-900 mb-4">Password</p>
-                            <div class="form-group">
-                                <input type="password" formControlName="jobseekerPassword" class="input"
-                                    placeholder="password" />
-                            </div>
-                            <!-- <mat-form-field class="example-form-field" appearance="fill">
-                                <mat-label>Clearable input</mat-label>
-                                <input matInput type="text" [(ngModel)]="value">
+                        </div>
+                        <button class="font-style-btn btn btn-primary btn-user btn-block"
+                            (click)="onLogin()">Login</button>
 
-                            </mat-form-field>
-                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                                <mat-icon>close</mat-icon>
-                            </button> -->
-                            <!-- <ul>
-                                <li *ngFor="let user of users">{{ user.first_name }} {{ user.last_name }}</li>
-                            </ul> -->
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox small">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck">
-                                    <label class="custom-control-label" for="customCheck">
-                                        Remember Me</label>
-                                    <a class="text-right" href="">Forgot Password?</a>
-                                </div>
-                            </div>
-                            <!-- <ngb-datepicker #d></ngb-datepicker> -->
-                            <button href="" class="font-style-btn btn btn-primary btn-user btn-block"
-                                (click)="onLogin()">
-                                Login
-                            </button>
-                        </form>
-                        <div class="text-center text3"> Don’t have any account?
-                            <a class="small" href=""> Sign Up For Free!</a>
-                        </div>
+                    </form>
+                    <div class="text-center text3"> Don’t have any account?
+                        <a class="small" href=""> Sign Up For Free!</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-</body>
-
-</html>
+    </div>
+</section>

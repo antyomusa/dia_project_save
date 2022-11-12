@@ -12,7 +12,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: LoginComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -22,12 +29,10 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     LoginRoutingModule,
     SharedModule,
-    MatInputModule,
-    MatIconModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatButtonModule
+    RouterModule.forChild(routes)
   ],
   exports: [
     LoginComponent

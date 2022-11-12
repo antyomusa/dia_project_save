@@ -5,10 +5,28 @@ $biru_card : #ECF3FF;
 $abu : #F3F3F3;
 $abu2 : #F7F7F7;
 $abu3 : #cecece;
+$abu4 : #F0F0F0;
 
 * {
     font-family: 'Montserrat', sans-serif;
 }
+
+mat-icon {
+    border: hidden !important;
+    color: black;
+}
+
+:host ::ng-deep .mat-form-field-flex {
+    background: white;
+    border: 2px solid $abu3;
+
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+
 
 header {
     .navbar-custom {
@@ -156,6 +174,14 @@ mat-sidenav-content {
 
         button {
             color: white;
+            border: white;
+            background-color: unset;
+        }
+
+        @media (min-width: 768px) {
+            button {
+                margin-top: 13px;
+            }
         }
 
         .category-list {
@@ -173,6 +199,10 @@ mat-sidenav-content {
 
         p {
             margin-bottom: 8px;
+        }
+
+        .badge {
+            background-color: $abu4;
         }
 
         @media (max-width: 767.98px) {

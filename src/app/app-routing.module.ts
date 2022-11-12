@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'job-find',
     loadChildren: () => import('../app/module/job-find/job-find.module').then((x) => x.JobFindModule)
   },
+  // {
+  //   path: 'detail-job',
+  //   loadChildren: () => import('../app/module/detail-job/detail-job.module').then((x) => x.DetailJobModule)
+  // },
 ];
 
 @NgModule({

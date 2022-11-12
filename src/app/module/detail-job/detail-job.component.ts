@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
-  selector: 'app-job-detail',
-  templateUrl: './job-detail.component.html',
-  styleUrls: ['./job-detail.component.scss']
+  selector: 'app-detail-job',
+  templateUrl: './detail-job.component.html',
+  styleUrls: ['./detail-job.component.scss']
 })
-export class JobDetailComponent implements OnInit {
-
-  // jobs = new Array<any>();
+export class DetailJobComponent implements OnInit {
 
   constructor(
     private readonly router: Router,
@@ -20,20 +19,8 @@ export class JobDetailComponent implements OnInit {
   jobs: Array<any> = [];
   singleJobs: any;
 
-  ngOnInit(): void {
-    // this.authService.getRecentJob().subscribe(
-    //   (response) => {
-    //     this.jobs = response;
-    //     // if (response.success == true) {
-    //     //   this.jobs = response.jobDesc;
-    //     // } else {
-    //     //   this.jobs = [];
-    //     // }
-    //   },
-    //   (error) => {
 
-    //   }
-    // );
+  ngOnInit(): void {
     let id = 0;
     this.activatedRoute.paramMap.subscribe((data: any) => {
       id = data.params.id
@@ -51,4 +38,5 @@ export class JobDetailComponent implements OnInit {
   }
 
   opened = false;
+
 }

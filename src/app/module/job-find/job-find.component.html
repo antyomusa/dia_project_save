@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <header id="header">
     <nav class="navbar navbar-custom fixed-top navbar-expand-lg py-3">
         <div class="container-fluid mx-2">
@@ -72,20 +73,29 @@
                     <div class="section-white">
                         <div class="section-search-grey">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="addon-wrapping"><img src="/assets/find2.svg"
-                                                alt=""></span>
-                                        <input type="text" class="form-control"
-                                            placeholder="Search job title or keyword" aria-describedby="button-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-search bg-primary rounded-pill px-5 ms-3"
-                                                type="button" id="button-addon2">Search</button>
-                                        </div>
+                                <div class="col-md-10">
+                                    <mat-form-field class="example-form-field container-fluid" appearance="fill">
+                                        <mat-label>Search for a job</mat-label>
+                                        <span matPrefix>
+                                            <mat-icon class="me-2 text-secondary">search</mat-icon> &nbsp;
+                                        </span>
+                                        <input matInput type="text" [(ngModel)]="value">
+                                        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear"
+                                            (click)="value=''">
+                                            <mat-icon style="border: none;">close</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-search bg-primary rounded-pill px-5 py-2 container-fluid"
+                                            type="button" id="button-addon2">Search</button>
                                     </div>
                                 </div>
+
+
                             </div>
-                            <div class="row mt-3">
+                            <div class="row">
                                 <div class="col-md-5 d-flex category-list">
                                     <div class="dropdown">
                                         <a class="btn btn-outline-primary rounded-pill dropdown-toggle px-3" href="#"
@@ -152,10 +162,10 @@
                                             <img src="/assets/ideaco.png" alt="">
                                         </div>
                                         <div class="col-md-7">
-                                            <h5 class="mb-2"><a routerLink="detail/{{job.jobId}}" class="text-dark"> {{
+                                            <h5><a routerLink="detail/{{job.jobId}}" class="text-dark"> {{
                                                     job.jobName
-                                                    }}<span
-                                                        class="badge bg-secondary ms-1">{{job.jobPosition}}</span></a>
+                                                    }}<span class="badge ms-1"
+                                                        [ngStyle]="{'color': (job.jobPosition === 'Contractual') ? '#006EFF' : (job.jobPosition === 'Full time') ? 'green' : ''}">{{job.jobPosition}}</span></a>
                                             </h5>
                                             <a href="">
                                                 <p>{{ job.recruiterCompany }}</p>
