@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { JobService } from 'src/app/services/job/job.service';
+import { HomeModel } from './model/home.model';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +10,17 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  jobs = new Array<any>();
+  homeModel = new HomeModel();
 
   constructor(
     private readonly router: Router,
-    public readonly authService: AuthService,
+    public readonly jobService: JobService,
   ) { }
 
   ngOnInit(): void {
-    this.authService.getRecentJob().subscribe(
+    this.jobService.getRecentJob().subscribe(
       (response) => {
-        this.jobs = response;
-        // if (response.success == true) {
-        //   this.jobs = response.jobDesc;
-        // } else {
-        //   this.jobs = [];
-        // }
+        this.homeModel.recentJobs = response.data;
       },
       (error) => {
 
@@ -32,11 +28,8 @@ export class HomeComponent implements OnInit {
     );
   }
 
-
   submitLogin() {
     this.router.navigate(["login"]);
   };
-
-
 
 }

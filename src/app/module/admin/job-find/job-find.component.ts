@@ -22,19 +22,14 @@ export class JobFindComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.authService.getRecentJob().subscribe(
-      (response) => {
-        this.jobs = response;
-        // if (response.success == true) {
-        //   this.jobs = response.jobDesc;
-        // } else {
-        //   this.jobs = [];
-        // }
-      },
-      (error) => {
+    // this.authService.getRecentJob().subscribe(
+    //   (response) => {
+    //     this.jobs = response;
+    //   },
+    //   (error) => {
 
-      }
-    );
+    //   }
+    // );
   }
 
   opened = false;

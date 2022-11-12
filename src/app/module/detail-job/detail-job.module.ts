@@ -18,7 +18,6 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     DetailJobRoutingModule,
-    MatSidenavModule,
     FormsModule,
     SharedModule,
     MatFormFieldModule,

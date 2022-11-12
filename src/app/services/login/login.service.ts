@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,7 @@ export class LoginService {
       .set('jobseekerEmail', body.jobseekerEmail)
       .set('jobseekerPassword', body.jobseekerPassword);
 
-    this.http.get
-    return this.http.post("http://54.251.83.205:9091/api/v1/jobseeker/login", params);
+    return this.http.post(`${environment.apiUrl}/api/v1/jobseeker/login`, params);
   }
 
 }

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JobDetailComponent } from 'src/app/core/layouts/job-detail/job-detail.component';
+import { JobDetailComponent } from '../job-detail/job-detail.component';
 import { JobFindComponent } from './job-find.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: JobFindComponent
+    component: JobFindComponent,
   },
   {
     path: "detail/:id",

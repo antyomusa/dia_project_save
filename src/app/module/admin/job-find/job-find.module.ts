@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { JobFindRoutingModule } from './job-find-routing.module';
 import { JobFindComponent } from './job-find.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,20 +17,7 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     JobFindRoutingModule,
-    MatSidenavModule,
-    FormsModule,
-    SharedModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule
-  ],
-  exports: [
-    MatSidenavModule,
-    FormsModule,
-    SharedModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule
+    SharedModule
   ]
 })
 export class JobFindModule { }
