@@ -1,5 +1,4 @@
-<p>job-detail works!</p>
-<div class="contain container-fluid" *ngFor="let job of jobs">
+<div class="contain container-fluid" *ngFor="let job of jobDetailModel.recentJobs">
     <div class="section-title">
         <div class="row">
             <div class="col-md-12">
@@ -8,15 +7,15 @@
                         <img src="/assets/ideaco.png" alt="">
                     </div>
                     <div class="col-md-7">
-                        <h5>{{ singleJobs.jobName }}
+                        <h5>{{ job.jobName }}
                             <!-- <span class="badge ms-1"
                                 [ngStyle]="{'color': (job.jobPosition === 'Contractual') ? '#006EFF' : (job.jobPosition === 'Full time') ? 'green' : ''}">{{job.jobPosition}}</span> -->
                         </h5>
                         <a href="">
-                            <p>{{ singleJobs.recruiterCompany }}</p>
+                            <p>{{ job.recruiterCompany }}</p>
                         </a>
-                        <p class="text-secondary">{{ singleJobs.jobAddress }}</p>
-                        <p>Rp{{ singleJobs.jobSalary }}</p>
+                        <p class="text-secondary">{{ job.jobAddress }}</p>
+                        <p>Rp{{ job.jobSalary }}</p>
                         <span class="text-secondary">1 day ago</span>
                     </div>
                 </div>

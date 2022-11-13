@@ -14,7 +14,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         loadChildren: () => import('../../../module/admin/job-find/job-find.module').then((x) => x.JobFindModule)
       },
-
+      {
+        path: 'detail/:id',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('../../../module/admin/job-detail/job-detail.module').then((x) => x.JobDetailModule)
+      }
     ]
   }
 

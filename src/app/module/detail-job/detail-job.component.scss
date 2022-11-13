@@ -3,7 +3,6 @@
 $biru : #006EFF;
 $biru_card : #ECF3FF;
 $abu : #F3F3F3;
-$abu4 : #F0F0F0;
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -37,12 +36,9 @@ header {
             border: 1px solid $biru;
         }
 
-        .username {
-            a {
-                text-decoration: none;
-                color: black;
-            }
-        }
+
+
+
 
         @media (min-width: 992px) {
 
@@ -60,10 +56,6 @@ header {
                     font-weight: 700;
                     margin-left: 5px;
                 }
-            }
-
-            .username {
-                margin-top: 10px;
             }
         }
 
@@ -83,6 +75,147 @@ header {
     }
 }
 
+#sidebar {
+    @media (max-width: 767.98px) {
+        .sidebar {
+            background: white;
+            width: 50%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            padding-left: 5%;
+            padding-top: 80px;
+            z-index: 100;
+        }
+
+        .shortcut-links {
+            a {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                flex-wrap: wrap;
+                text-decoration: none;
+                color: black;
+
+                img {
+                    margin-right: 20px;
+                    max-width: 20px;
+                }
+
+                p {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .small-sidebar {
+            margin-left: -100%;
+        }
+
+        .small-sidebar img {
+            margin-top: 18px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        .small-sidebar a p {
+            display: none;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .sidebar {
+            background: white;
+            width: 25%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            padding-left: 2%;
+            padding-top: 80px;
+            z-index: 100;
+        }
+
+        .shortcut-links {
+            a {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                flex-wrap: wrap;
+                text-decoration: none;
+                color: black;
+
+                img {
+                    margin-right: 20px;
+                    max-width: 20px;
+                }
+
+                p {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .small-sidebar {
+            margin-left: -100%;
+        }
+
+        .small-sidebar img {
+            margin-top: 18px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        .small-sidebar a p {
+            display: none;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .sidebar {
+            background: white;
+            width: 15%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            padding-left: 2%;
+            padding-top: 80px;
+            z-index: 100;
+        }
+
+        .shortcut-links {
+            a {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                flex-wrap: wrap;
+                text-decoration: none;
+                color: black;
+
+                img {
+                    margin-right: 20px;
+                    max-width: 20px;
+                }
+
+                p {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .small-sidebar {
+            width: 5%;
+        }
+
+        .small-sidebar img {
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+
+        .small-sidebar a p {
+            display: none;
+        }
+    }
+}
 
 @media (max-width: 767.98px) {
     main {
@@ -144,10 +277,6 @@ main {
             margin-bottom: 8px;
         }
 
-        .badge {
-            background-color: $abu4;
-        }
-
         @media (max-width: 767.98px) {
             .photo-border {
                 margin-bottom: 20px;
@@ -194,33 +323,4 @@ main {
             }
         }
     }
-}
-
-mat-sidenav-container {
-    height: 100%;
-}
-
-
-
-mat-sidenav {
-    background: white;
-    width: 15%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    padding-left: 2%;
-    padding-top: 80px;
-    z-index: 100;
-}
-
-mat-sidenav {
-    padding-top: 106px;
-    height: 100%;
-    background-color: white;
-}
-
-mat-sidenav-content {
-    padding-top: 106px;
-    height: 100%;
-    background-color: $abu;
 }
