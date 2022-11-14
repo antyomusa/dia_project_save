@@ -5,7 +5,7 @@ import { JobDetailComponent } from './job-detail.component';
 
 const routes: Routes = [
   {
-    path: "apply/",
+    path: "admin/apply/:id",
     component: ApplyComponent
   }
 ];

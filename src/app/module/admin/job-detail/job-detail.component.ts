@@ -39,4 +39,8 @@ export class JobDetailComponent implements OnInit {
         })
     })
   }
+
+  submitApply() {
+    this.router.navigate(["admin/apply"]);
+  }
 }

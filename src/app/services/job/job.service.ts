@@ -22,4 +22,13 @@ export class JobService {
       .set('jobStatus', body.jobStatus);
     return this.http.get(`${environment.apiUrl}/api/v1/jobs/detail`, { params: params });
   }
+
+  public postCV(body: any): Observable<any> {
+    const params = new HttpParams()
+      .set('jobseekerId', body.jobseekerId)
+      .set('jobseekerResume', body.jobseekerResume);
+
+    return this.http.post(`${environment.apiUrl}/api/v1/jobseeker/user/update/resume`, params);
+  }
+
 }

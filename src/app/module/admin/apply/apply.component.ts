@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { JobService } from 'src/app/services/job/job.service';
+import { ApplyModel } from './model/apply.model';
 
 @Component({
   selector: 'app-apply',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplyComponent implements OnInit {
 
-  constructor() { }
+  applyModel = new ApplyModel();
+
+  constructor(
+    public readonly jobService: JobService,
+    public readonly router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((data: any) => {
+      let id = data.params.id,
+        params = {
+          jobId: id,
+          jobStatus: "visible"
+        }
+    })
   }
 
 }
