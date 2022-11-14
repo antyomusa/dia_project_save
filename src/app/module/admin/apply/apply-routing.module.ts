@@ -3,10 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ApplyComponent } from './apply.component';
 
 const routes: Routes = [
-  {
-    path: "apply",
-    component: ApplyComponent
-  }
 ];
 
 @NgModule({

@@ -25,6 +25,15 @@ export class ApplyComponent implements OnInit {
           jobId: id,
           jobStatus: "visible"
         }
+
+      this.jobService.getDetailJob(params).subscribe(
+        (response: any) => {
+          this.applyModel.singleJobs = response.data;
+          console.log(this.applyModel.singleJobs)
+        },
+        (error) => {
+          this.applyModel.singleJobs = error.error;
+        })
     })
   }
 
