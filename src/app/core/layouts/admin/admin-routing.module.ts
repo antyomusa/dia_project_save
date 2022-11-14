@@ -18,6 +18,11 @@ const routes: Routes = [
         path: 'detail/:id',
         canActivate: [AuthGuard],
         loadChildren: () => import('../../../module/admin/job-detail/job-detail.module').then((x) => x.JobDetailModule)
+      },
+      {
+        path: 'apply',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('../../../module/admin/apply/apply.module').then((x) => x.ApplyModule)
       }
     ]
   }

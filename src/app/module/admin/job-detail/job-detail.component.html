@@ -1,4 +1,4 @@
-<div class="contain container-fluid" *ngFor="let job of jobDetailModel.recentJobs">
+<div class="container-fluid" *ngFor="let job of jobDetailModel.singleJobs">
     <div class="section-title">
         <div class="row">
             <div class="col-md-12">
@@ -8,8 +8,8 @@
                     </div>
                     <div class="col-md-7">
                         <h5>{{ job.jobName }}
-                            <!-- <span class="badge ms-1"
-                                [ngStyle]="{'color': (job.jobPosition === 'Contractual') ? '#006EFF' : (job.jobPosition === 'Full time') ? 'green' : ''}">{{job.jobPosition}}</span> -->
+                            <span class="badge ms-1"
+                                [ngStyle]="{'color': (job.jobPosition === 'Contractual') ? '#006EFF' : (job.jobPosition === 'Full time') ? 'green' : ''}">{{job.jobPosition}}</span>
                         </h5>
                         <a href="">
                             <p>{{ job.recruiterCompany }}</p>
@@ -20,13 +20,14 @@
                     </div>
                 </div>
                 <div class="d-flex">
-                    <button class="btn btn-primary rounded-pill px-4" type="button">Apply Now</button>
-                    <button type="button" class="btn btn-outline-primary rounded-pill">
-                        <img src="/assets/share.svg" alt="" class="filter-blue"> Share this
-                        job</button>
-                    <button type="button" class="btn btn-outline-primary rounded-pill">
+                    <a routerLink="apply/" class="btn btn-primary rounded-pill px-4" type="button">Apply
+                        Now</a>
+                    <a type="button" class="btn btn-outline-primary rounded-pill">
+                        <img src="/assets/share.svg" alt="" class="filter-blue" width="20px" height="20px"> Share this
+                        job</a>
+                    <a type="button" class="btn btn-outline-primary rounded-pill">
                         <img src="/assets/save.svg" alt="" class="filter-blue"> Save this
-                        job</button>
+                        job</a>
                 </div>
             </div>
         </div>

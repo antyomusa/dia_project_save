@@ -35,19 +35,21 @@ export class JobDetailComponent implements OnInit {
     //   }
     // );
     let id = 0;
-    this.activatedRoute.paramMap.subscribe((data: any) => {
-      id = data.params.id
+    this.activatedRoute.paramMap.subscribe(
+      (data: any) => {
+        id = data.params.id
 
 
-      this.authService.getRecentJob().subscribe((res: any) => {
-        this.jobs = res
-        this.jobs = this.jobs.filter((data: any) => data.jobId == id);
-        this.singleJobs = this.jobs[0];
-        console.log(this.singleJobs)
-      }, (error: any) => {
-        console.log(error)
+        this.authService.getRecentJob().subscribe(
+          (res: any) => {
+            this.jobs = res
+            this.jobs = this.jobs.filter((data: any) => data.jobId == id);
+            this.singleJobs = this.jobs[0];
+            console.log(this.singleJobs)
+          }, (error: any) => {
+            console.log(error)
+          })
       })
-    })
   }
 
   opened = false;

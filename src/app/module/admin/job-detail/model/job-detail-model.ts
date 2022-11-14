@@ -1,4 +1,4 @@
 export class JobDetailModel {
-    recentJobs: Array<any> = [];
+    recentJobs: any = [];
     singleJobs: any;
 }

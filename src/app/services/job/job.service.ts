@@ -16,11 +16,10 @@ export class JobService {
     return this.http.get(url);
   }
 
-  public getDetailJob(body: any): Observable<any> {
+  public getDetailJob(body: any): Observable<unknown> {
     const params = new HttpParams()
       .set('jobId', body.jobId)
       .set('jobStatus', body.jobStatus);
-
     return this.http.get(`${environment.apiUrl}/api/v1/jobs/detail`, { params: params });
   }
 }

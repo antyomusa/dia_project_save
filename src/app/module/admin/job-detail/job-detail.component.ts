@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { JobService } from 'src/app/services/job/job.service';
 import { JobDetailModel } from './model/job-detail-model';
@@ -15,36 +15,28 @@ export class JobDetailComponent implements OnInit {
 
   constructor(
     public readonly jobService: JobService,
-    // private activatedRoute: ActivatedRoute
+    public readonly router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
-
-  // jobs: Array<any> = [];
-  // singleJobs: any;
 
 
   ngOnInit(): void {
-    // let id = 0;
-    // this.activatedRoute.paramMap.subscribe((data: any) => {
-    //   id = data.params.id
 
+    this.activatedRoute.paramMap.subscribe((data: any) => {
+      let id = data.params.id,
+        params = {
+          jobId: id,
+          jobStatus: "visible"
+        }
 
-    //   this.jobService.getRecentJob().subscribe((res: any) => {
-    //     this.jobs = res
-    //     this.jobs = this.jobs.filter((data: any) => data.jobId == id);
-    //     this.singleJobs = this.jobs[0];
-    //     console.log(this.singleJobs)
-    //   }, (error: any) => {
-    //     console.log(error)
-    //   })
-    // })
-    this.jobService.getRecentJob().subscribe(
-      (response) => {
-        this.jobDetailModel.recentJobs = response.data;
-      },
-      (error) => {
-
-      }
-    );
+      this.jobService.getDetailJob(params).subscribe(
+        (response: any) => {
+          this.jobDetailModel.singleJobs = response.data;
+          console.log(this.jobDetailModel.singleJobs)
+        },
+        (error) => {
+          this.jobDetailModel.singleJobs = error.error;
+        })
+    })
   }
-
 }
