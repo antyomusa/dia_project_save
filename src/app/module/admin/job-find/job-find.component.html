@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class="section-white" *ngFor="let job of jobFindModel.recentJobs">
-            <div class="card">
+            <div class="card border-0">
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-10">
@@ -90,8 +90,10 @@
                                 <div class="col-md-7">
                                     <h5><a routerLink="detail/{{job.jobId}}" class="text-dark"> {{
                                             job.jobName
-                                            }}<span class="badge ms-1"
-                                                [ngStyle]="{'color': (job.jobPosition === 'Contractual') ? '#006EFF' : (job.jobPosition === 'Full time') ? 'green' : ''}">{{job.jobPosition}}</span></a>
+                                            }}
+                                            <span class="badge ms-1"
+                                                [ngStyle]="{'color': (job.jobPosition === 'Contractual') ? '#006EFF' : (job.jobPosition === 'Full time') ? 'green' : ''}">{{job.jobPosition}}</span>
+                                        </a>
                                     </h5>
                                     <a href="">
                                         <p>{{ job.recruiterCompany }}</p>

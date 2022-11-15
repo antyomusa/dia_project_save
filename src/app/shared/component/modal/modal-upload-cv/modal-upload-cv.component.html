@@ -1,0 +1,19 @@
+<div class="modal-header border-0 border border-danger">
+    <h5 class="modal-title" id="exampleModalLabel">Upload Cv</h5>
+    <button (click)="close()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="container h100">
+    <div class="modal-body h100">
+        <img src="../../../../../assets/uploadcv.png" alt="">
+        <h5>Drop your cv here</h5>
+        <p class="text-center p">or</p>
+        <!-- <figure class="image-container">
+        <img id="chosen-image">
+        <figcaption id="file-name"></figcaption>
+    </figure> -->
+        <input (change)="onChange($event)" class="form-control" type="file" accept="application/pdf">
+        <button (click)="upload()" class="btn bg-primary rounded-pill font-style-btn btn-1 btn-success mt-3">
+            Upload CV
+        </button>
+    </div>
+</div>

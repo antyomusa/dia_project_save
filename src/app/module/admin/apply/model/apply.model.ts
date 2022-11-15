@@ -1,4 +1,10 @@
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+
 export class ApplyModel {
-    recentJobs: any = [];
-    singleJobs: any;
+    applyModelForm = new FormGroup(
+        {
+            jobseekerId: new FormControl(0, [Validators.required]),
+            jobseekerResume: new FormControl('', [Validators.required])
+        }
+    );
 }

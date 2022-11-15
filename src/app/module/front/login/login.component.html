@@ -12,7 +12,6 @@
                     <div *ngIf="loginModel.isInvalidLogin()"
                         class="mt-2 text-sm text-secondary text-red-600 dark:text-red-500" role="alert">
                         <p style="color: red;">
-                            <!-- <img class="icon" src="/assets/image/iconlogin.svg" alt=""> -->
                             {{ loginModel.responseLogin.message }}
                         </p>
                     </div>
@@ -26,6 +25,25 @@
                             <span style="color: red;">A valid email is required</span>
                         </div>
                     </div>
+                    <!-- <div class="mb-6">
+                        <input type="email" formControlName="jobseekerEmail"
+                            [ngClass]="{ 'bg-red-50 border-red-500 text-red-900 focus:ring-red-500 focus:border-red-500': f['email'].invalid && (f['email'].touched || f['email'].dirty) && f['email'].errors,
+                                        'bg-gray-50 border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500': f['email'].valid }"
+                            class="block w-full p-2.5 text-sm rounded-lg border form-control form-control-user"
+                            placeholder="name@flowbite.com" required="">
+                        <div *ngIf="f['email'] && (f['email'].touched || f['email'].dirty)">
+                            <div *ngIf="f['email'].errors">
+                                <p *ngIf="f['email'].errors['required']"
+                                    class="mt-2 text-sm text-red-600 dark:text-red-500">
+                                    <span class="font-medium">Oops!</span> Email is required
+                                </p>
+                                <p *ngIf="f['email'].errors['email']"
+                                    class="mt-2 text-sm text-red-600 dark:text-red-500">
+                                    <span class="font-medium">Oops!</span> Format email wrong
+                                </p>
+                            </div>
+                        </div>
+                    </div> -->
                     <p class="text-secondary text-gray-900 mb-4">Password</p>
                     <div class="form-group">
                         <input formControlName="jobseekerPassword" type="password"

@@ -29,16 +29,12 @@ export class LoginComponent implements OnInit {
   }
 
   checkValidation() {
-    // alert(this.formGroupLogin.controls['jobseekerEmail'].valid);
-    // alert(this.formGroupLogin.controls['jobseekerPassword'].valid);
   }
+
 
   onLogin() {
     this.loginService.postLogin(this.loginModel.formGroupLogin.value).subscribe(
       (response) => {
-        // this.data = response;
-        // localStorage.setItem('id_token', this.data.token);
-        // this.router.navigate(['job-find'])
         this.authService.saveUserData(response.data.registerJobseekerDTO)
         this.router.navigate(['admin/job-find'])
       },
@@ -47,21 +43,4 @@ export class LoginComponent implements OnInit {
       }
     )
   }
-  // onLogin() {
-  //   const data = this.formGroupLogin.value;
-  //   if (data.jobseekerEmail && data.jobseekerPassword) {
-  //     this.loginService.postLogin(data).subscribe(
-  //       (response) => {
-  //         this.data = response;
-  //         localStorage.setItem('id_token', this.data.token);
-  //         this.router.navigate(['job-find'])
-  //       },
-  //       (error) => {
-  //         alert(error.error.message);
-  //       }
-  //     )
-  //   } else {
-  //     alert("error");
-  //   }
-  // }
 }

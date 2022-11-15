@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ApplyComponent } from './apply.component';
+import { ApplicationSuccessComponent } from './application-success.component';
 
 const routes: Routes = [
   {
-    path: "",
-    component: ApplyComponent
+    path: '',
+    component: ApplicationSuccessComponent,
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ApplyRoutingModule { }
+export class ApplicationSuccessRoutingModule { }
