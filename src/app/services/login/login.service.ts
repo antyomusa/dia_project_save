@@ -21,7 +21,7 @@ export class LoginService {
       .set('jobseekerEmail', body.jobseekerEmail)
       .set('jobseekerPassword', body.jobseekerPassword);
 
-    return this.http.post(`${environment.apiUrl}/api/v1/jobseeker/login`, params);
+    return this.http.post('http://54.251.83.205:9091/api/v1/jobseeker/login', params);
   }
 
 }
